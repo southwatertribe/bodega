@@ -13,9 +13,12 @@ class NearbyShopItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(15),
-      child: Text(shopName),
-    );
+    return Expanded(child: Card(
+      child: ListTile(
+        leading: Icon(Icons.business),
+        title: Text(shopName),
+        subtitle: Text(location),
+      ),
+    ));
   }
 }
