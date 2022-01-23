@@ -8,11 +8,12 @@ class ShopProfile extends StatelessWidget {
   final String location;
 
   ShopProfile(this.shopName, this.location);
-  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: const Text('Should correspond to tapped shop'),
+      ),
     );
   }
 }

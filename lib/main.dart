@@ -10,7 +10,6 @@ void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({ Key? key }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ChangeNotifierProvider(
@@ -26,25 +25,6 @@ class MyApp extends StatelessWidget {
           //Will add routes
         },
       ),
-    );
-  }
-}
-
-
-
-
-class NearbyShopsList extends StatefulWidget {
-  const NearbyShopsList({ Key? key }) : super(key: key);
-
-  @override
-  _NearbyShopsListState createState() => _NearbyShopsListState();
-}
-
-class _NearbyShopsListState extends State<NearbyShopsList> {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
     );
   }
 }
