@@ -15,4 +15,8 @@ const DUMMY_SHOPS = [
     name: 'Patty\'s Pub', 
     location: '8050 fairchild avenue'
   ),
+  Shop(
+    name: "CAFE FED",
+    location: 'BS8 1UQ Cotham'
+  )
 ];
