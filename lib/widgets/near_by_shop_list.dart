@@ -4,19 +4,23 @@
 // ignore_for_file: sized_box_for_whitespace
 
 import 'package:flutter/material.dart';
+import 'package:tester/providers/shops_provider.dart';
 import 'package:tester/widgets/item_nearbyshop.dart';
-import '../DUMMDATA.dart';
+import 'package:provider/provider.dart';
 
 class NearbyShopsList extends StatelessWidget {
   const NearbyShopsList({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    Provider.of<ShopsProv>(context);
+    final shopsData = Provider.of<ShopsProv>(context);
+    final shops = shopsData.shops;
     return Container(
       height: 300,
       child: ListView.builder(
-        itemCount: DUMMY_SHOPS.length,
-        itemBuilder: (context, index) => NearbyShopItem(DUMMY_SHOPS[index].name,DUMMY_SHOPS[index].location),
+        itemCount: shops.length,
+        itemBuilder: (context, index) => NearbyShopItem(shops[index].name,shops[index].location),
       )
     );
   }

@@ -2,6 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:tester/screens/shop_browser.dart';
+import 'package:provider/provider.dart';
+import 'package:tester/widgets/item_nearbyshop.dart';
+
+import './providers/shops_provider.dart';
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
@@ -9,16 +13,19 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Bodega',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        accentColor: Colors.amber,
-      ), 
-      home: ShopBrowser(),
-      routes: {
-        
-      },
+    return ChangeNotifierProvider(
+      create: (ctx) => ShopsProv(),
+      child: MaterialApp(
+        title: 'Bodega',
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
+          accentColor: Colors.amber,
+        ), 
+        home: ShopBrowser(),
+        routes: {
+          //Will add routes
+        },
+      ),
     );
   }
 }
