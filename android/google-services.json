@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "475907897214",
+    "project_id": "bodega-22cd9",
+    "storage_bucket": "bodega-22cd9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:475907897214:android:db82b0dfcdb3ac20ca652f",
+        "android_client_info": {
+          "package_name": "com.example.tester"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "475907897214-8ihnh676vde9bnn3lm68p6v0fdhposeg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDijFa-1N9kZtKTWxIjaBIsIcvyIu9Q0Q4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "475907897214-8ihnh676vde9bnn3lm68p6v0fdhposeg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
