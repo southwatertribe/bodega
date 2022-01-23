@@ -1,16 +1,3 @@
 # tester
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This is a personal project I am working on. It allows users to buy and sell homemade goods locally from their own house. Ultimately the user will provide a location and all registered shops by other users within a certain radius will appear. The user can then tap to the corresponding shop profile and make an order for collection. The app is free to use and will only charge people who want to set up a shop. 
