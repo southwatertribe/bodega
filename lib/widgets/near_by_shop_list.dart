@@ -18,12 +18,10 @@ class _NearbyShopsListState extends State<NearbyShopsList> {
   Widget build(BuildContext context) {
     return Container(
       height: 300,
-      child: ListView(
-      children: DUMMY_SHOPS.map((shopData) => NearbyShopItem(
-        shopData.name,
-        shopData.location
-        )).toList(),
-      ),
+      child: ListView.builder(
+        itemCount: DUMMY_SHOPS.length,
+        itemBuilder: (context, index) => NearbyShopItem(DUMMY_SHOPS[index].name,DUMMY_SHOPS[index].location),
+      )
     );
   }
 }
