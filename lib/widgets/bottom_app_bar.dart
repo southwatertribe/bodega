@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 
 class BottomNavBar extends StatelessWidget {
-  const BottomNavBar({ Key? key }) : super(key: key);
-
+  /* const BottomNavBar({this.selectedIndex = 0, required this.onTap});
+  
+  final int selectedIndex;
+  final void Function(int) onTap; */
   @override
   Widget build(BuildContext context) {
     return BottomNavigationBar(
+      //onTap: (index)=> currentIndex = index,
       items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_rounded),
@@ -20,6 +23,8 @@ class BottomNavBar extends StatelessWidget {
             label: 'Settings',
           ),
         ],
+        /* currentIndex: selectedIndex,
+        onTap: onTap, */
     );
   }
 }

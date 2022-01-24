@@ -3,6 +3,7 @@
 //you tap it to get sent to the corresponding shop profile
 
 import 'package:flutter/material.dart';
+import 'package:tester/screens/shop_profile.dart';
 
 class NearbyShopItem extends StatelessWidget {
   //const NearbyShopItem({ Key? key }) : super(key: key);
@@ -13,12 +14,17 @@ class NearbyShopItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(child: Card(
-      child: ListTile(
-        leading: Icon(Icons.business),
-        title: Text(shopName),
-        subtitle: Text(location),
-      ),
-    ));
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ShopProfile(shopName, location)),);
+      },
+      child: Expanded(child: Card(
+        child: ListTile(
+          leading: Icon(Icons.business),
+          title: Text(shopName),
+          subtitle: Text(location),
+        ),
+      )),
+    );
   }
 }

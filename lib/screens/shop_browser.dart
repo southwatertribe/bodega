@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import '../widgets/near_by_shop_list.dart';
 import '../widgets/bottom_app_bar.dart';
 
+
+
 class ShopBrowser extends StatelessWidget {
   const ShopBrowser({ Key? key }) : super(key: key);
 
@@ -21,7 +23,7 @@ class ShopBrowser extends StatelessWidget {
             decoration: InputDecoration(hintText: 'Select A Location'),
           )),
           NearbyShopsList(),
-          BottomNavBar(), 
+          BottomNavBar(),
         ],
       ),
     );

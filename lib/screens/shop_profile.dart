@@ -1,6 +1,7 @@
 //This page is pushed when you tap on a shop tile
 
 import 'package:flutter/material.dart';
+import 'package:tester/models/shop.dart';
 
 class ShopProfile extends StatelessWidget {
   //const ShopProfile({ Key? key }) : super(key: key);
@@ -12,7 +13,7 @@ class ShopProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Should correspond to tapped shop'),
+        title: Text(shopName),
       ),
     );
   }
