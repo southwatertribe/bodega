@@ -5,6 +5,8 @@ import 'package:tester/screens/shop_browser.dart';
 import 'package:provider/provider.dart';
 import 'package:tester/widgets/item_nearbyshop.dart';
 
+import 'screens/shop_profile.dart';
+
 import './providers/shops_provider.dart';
 void main() => runApp(const MyApp());
 
@@ -22,7 +24,7 @@ class MyApp extends StatelessWidget {
         ), 
         home: ShopBrowser(),
         routes: {
-          //Will add routes
+          ShopProfile.routename: (ctx) => ShopProfile(),
         },
       ),
     );

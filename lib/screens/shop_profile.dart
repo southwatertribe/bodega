@@ -5,12 +5,10 @@ import 'package:tester/models/shop.dart';
 
 class ShopProfile extends StatelessWidget {
   //const ShopProfile({ Key? key }) : super(key: key);
-  final String shopName;
-  final String location;
-
-  ShopProfile(this.shopName, this.location);
+  static const routename = '/shop-profile';
   @override
   Widget build(BuildContext context) {
+    final shopName = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       appBar: AppBar(
         title: Text(shopName),

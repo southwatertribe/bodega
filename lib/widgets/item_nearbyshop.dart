@@ -16,7 +16,7 @@ class NearbyShopItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.of(context).push(MaterialPageRoute(builder: (ctx)=>ShopProfile(shopName, location)),);
+        Navigator.of(context).pushNamed(ShopProfile.routename, arguments: shopName);
       },
       child: Expanded(child: Card(
         child: ListTile(
