@@ -10,6 +10,11 @@ class ShopsProv with ChangeNotifier{
     return [..._shops];
   }
 
+  //Finds the shop item given the name
+  Shop findByName(String name) {
+    return _shops.firstWhere((shop)=> shop.name == name);
+  }
+  
   void createShop() {
    // _shops.add(val);
     notifyListeners();
