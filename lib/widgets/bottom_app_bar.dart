@@ -1,30 +1,56 @@
+// ignore_for_file: prefer_const_constructors, prefer_final_fields
+
 import 'package:flutter/material.dart';
 
-class BottomNavBar extends StatelessWidget {
-  /* const BottomNavBar({this.selectedIndex = 0, required this.onTap});
-  
-  final int selectedIndex;
-  final void Function(int) onTap; */
+//Widget Option screens
+import '../screens/shop_browser.dart';
+
+class BottomNavBar extends StatefulWidget {
+  @override
+  State<BottomNavBar> createState() => _BottomNavBarState();
+}
+
+class _BottomNavBarState extends State<BottomNavBar> {
+  int _selectedIndex = 1;
+
+List<Widget> _widgetOptions = [
+    Text('Profile'),
+    ShopBrowser(),
+    Text('Settings'),    
+  ];
+
+  void _onItemTap(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return BottomNavigationBar(
-      //onTap: (index)=> currentIndex = index,
-      items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle_rounded),
-            label: 'Profile',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home_rounded),
-            label: 'Shop Browser',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
-            label: 'Settings',
-          ),
-        ],
-        /* currentIndex: selectedIndex,
-        onTap: onTap, */
+    return Scaffold(
+      body: IndexedStack(
+          index: _selectedIndex,
+          children: _widgetOptions,     
+        ),
+      bottomNavigationBar: BottomNavigationBar(
+        //onTap: (index)=> currentIndex = index,
+        items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.account_circle_rounded),
+              label: 'Profile',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_rounded),
+              label: 'Shop Browser',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings),
+              label: 'Settings',
+            ),
+          ],
+          currentIndex: _selectedIndex,
+          onTap: _onItemTap,
+      ),
     );
   }
 }

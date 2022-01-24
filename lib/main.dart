@@ -1,10 +1,9 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:tester/screens/shop_browser.dart';
 import 'package:provider/provider.dart';
-import 'package:tester/widgets/item_nearbyshop.dart';
-
+import 'screens/shop_browser.dart';
+import 'widgets/bottom_app_bar.dart';
 import 'screens/shop_profile.dart';
 
 import './providers/shops_provider.dart';
@@ -22,7 +21,7 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.indigo,
           accentColor: Colors.amber,
         ), 
-        home: ShopBrowser(),
+        home: BottomNavBar(),
         routes: {
           ShopProfile.routename: (ctx) => ShopProfile(),
         },
