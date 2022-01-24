@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 
 //Widget Option screens
 import '../screens/shop_browser.dart';
+import '../screens/user_shop_profile.dart';
 
 class BottomNavBar extends StatefulWidget {
   @override
@@ -14,7 +15,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 1;
 
 List<Widget> _widgetOptions = [
-    Text('Profile'),
+    UserProfile(),
     ShopBrowser(),
     Text('Settings'),    
   ];
