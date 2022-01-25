@@ -34,6 +34,7 @@ List<Widget> _widgetOptions = [
           children: _widgetOptions,     
         ),
       bottomNavigationBar: BottomNavigationBar(
+        backgroundColor: Colors.black87,
         //onTap: (index)=> currentIndex = index,
         items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
