@@ -4,4 +4,4 @@ This is a personal project I am working on. It allows users to buy and sell home
 
 # Screenshot
 
-![Splash](Screenshots\Screenshot_1643220848.png)
+![Splash](\Screenshots\Screenshot_1643220848.png)
