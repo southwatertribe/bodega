@@ -4,4 +4,4 @@ This is a personal project I am working on. It allows users to buy and sell home
 
 # Screenshot
 
-![Splash](\Screenshots\Screenshot_1643220848.png)
+![Splash](https://github.com/southwatertribe/bodega/issues/1#issuecomment-1022477667)
