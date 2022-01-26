@@ -15,19 +15,16 @@ class AuthScreen extends StatelessWidget {
     // final transformConfig = Matrix4.rotationZ(-8 * pi / 180);
     // transformConfig.translate(-10.0);
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: false,
       body: Stack(
+
         children: <Widget>[
           Container(
             decoration: BoxDecoration(
-              gradient: LinearGradient(
-                colors: [
-                  Color.fromRGBO(0,0,0,1).withOpacity(0.5),
-                  Color.fromRGBO(171,63,156,1).withOpacity(0.9),
-                ],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                stops: [0, 1],
+              image: DecorationImage(
+              image: NetworkImage(
+                  "https://i0.wp.com/www.spicesinmydna.com/wp-content/uploads/2018/12/Brown-Butter-Dark-Chocolate-Cranberry-Walnut-Cookies-9.jpg?w=1830&ssl=1"),
+              fit: BoxFit.cover,
               ),
             ),
           ),
@@ -44,16 +41,15 @@ class AuthScreen extends StatelessWidget {
                       margin: EdgeInsets.only(bottom: 20.0),
                       padding:
                           EdgeInsets.symmetric(vertical: 8.0, horizontal: 94.0),
-                      transform: Matrix4.rotationZ(-8 * pi / 180)
-                        ..translate(0),
-                      // ..translate(-10.0),
+                      /* transform: Matrix4.rotationZ(-8 * pi / 180)
+                        ..translate(-10.0), */
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.black,
                         boxShadow: [
                           BoxShadow(
                             blurRadius: 10,
-                            color: Colors.pink.shade900,
+                            color: Colors.amber.shade900,
                             offset: Offset(0, 2),
                           )
                         ],
@@ -61,14 +57,16 @@ class AuthScreen extends StatelessWidget {
                       child: Text(
                         'BODEGA',
                         style: TextStyle(
-                          fontSize: 64,
+                          fontSize: 55,
                           fontFamily: 'Merriweather',
                           fontWeight: FontWeight.bold,
                           color: Colors.yellow.shade50,
+                          
                         ),
                       ),
                     ),
                   ),
+                  SizedBox(height: 50),
                   Flexible(
                     flex: deviceSize.width > 600 ? 2 : 1,
                     child: AuthCard(),
@@ -140,12 +138,13 @@ class _AuthCardState extends State<AuthCard> {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
-      elevation: 8.0,
+      elevation: 0,
+      color: Color.fromRGBO(1, 1, 1, 0.5),
       child: Container(
         height: _authMode == AuthMode.Signup ? 320 : 260,
         constraints:
             BoxConstraints(minHeight: _authMode == AuthMode.Signup ? 320 : 260),
-        width: deviceSize.width * 0.75,
+        width: deviceSize.width * 0.9,
         padding: EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
@@ -212,11 +211,11 @@ class _AuthCardState extends State<AuthCard> {
                   ),
                 FlatButton(
                   child: Text(
-                      '${_authMode == AuthMode.Login ? 'SIGNUP' : 'LOGIN'} INSTEAD'),
+                  '${_authMode == AuthMode.Login ? 'SIGNUP' : 'LOGIN'} INSTEAD'),
                   onPressed: _switchAuthMode,
                   padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 4),
                   materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
-                  textColor: Theme.of(context).primaryColor,
+                  textColor: Color.fromRGBO(255,255,255,1),
                 ),
               ],
             ),

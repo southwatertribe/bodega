@@ -20,9 +20,11 @@ class MyApp extends StatelessWidget {
       create: (ctx) => ShopsProv(),)
       ],
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Bodega',
         theme: ThemeData(
           brightness: Brightness.dark,
+          //backgroundColor: Colors.black87,
         ), 
         home: AuthScreen(),
         routes: {

@@ -2,7 +2,7 @@
 
 import './models/shop.dart';
 
-const DUMMY_SHOPS = [
+final DUMMY_SHOPS = [
   Shop(
     name: 'Frog\'s cookies',
     location: '15764 Midwood Drive, Granada Hills',

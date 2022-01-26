@@ -3,10 +3,11 @@
 import 'package:flutter/material.dart';
 import 'product.dart';
 
-class Shop {
+//Shop is now also a provider
+class Shop with ChangeNotifier {
   final String name;
   final String location;
   final List<Product> products;
-  const Shop({required this.name, required this.location, required this.products});
+  Shop({required this.name, required this.location, required this.products});
 
 }
