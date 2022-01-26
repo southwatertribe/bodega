@@ -4,4 +4,4 @@ This is a personal project I am working on. It allows users to buy and sell home
 
 # Screenshot
 
-![Splash](Screenshots\Screenshot_1643220848.jpeg)
+![Splash](https://user-images.githubusercontent.com/94877162/151225425-4e664fd0-bee9-479a-a158-09c2b2dc0d05.jpeg)
