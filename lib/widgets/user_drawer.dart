@@ -15,7 +15,7 @@ class UserDrawer extends StatelessWidget {
           const Divider(),
           ListTile(
             leading: const Icon(Icons.add_business),
-            title: const Text('Add a product'),
+            title: const Text('Edit your wares'),
             onTap: () => {
               //Will be sent to add product form
             },

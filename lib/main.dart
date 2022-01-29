@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:tester/screens/create_a_shop.dart';
 import 'widgets/bottom_app_bar.dart';
 import 'screens/shop_profile.dart';
 //for testing purposes
@@ -26,9 +27,10 @@ class MyApp extends StatelessWidget {
           brightness: Brightness.dark,
           //backgroundColor: Colors.black87,
         ), 
-        home: AuthScreen(),
+        home: BottomNavBar(),
         routes: {
           ShopProfile.routename: (ctx) => ShopProfile(),
+          CreateAShopScreen.routename: (ctx) => CreateAShopScreen(),
         },
       ),
     );
