@@ -1,7 +1,11 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors, unused_field, prefer_final_fields
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:tester/models/shop.dart';
+
+//Providers
+import '../providers/shops_provider.dart';
 
 class CreateAShopScreen extends StatefulWidget {
   const CreateAShopScreen({ Key? key }) : super(key: key);
@@ -13,7 +17,7 @@ class CreateAShopScreen extends StatefulWidget {
 class _CreateAShopScreenState extends State<CreateAShopScreen> {
   
   final _formInfo = GlobalKey<FormState>();
-  var _editedShop = Shop(
+  var _createdShop = Shop(
     id: '', 
     name: '', 
     location: '', 
@@ -21,11 +25,16 @@ class _CreateAShopScreenState extends State<CreateAShopScreen> {
     );
 
   void _submitShop() {
-    
+    final isValid = _formInfo.currentState!.validate();
+    if (!isValid) {
+      return;
+    }
     _formInfo.currentState!.save();
+    Provider.of<ShopsProv>(context, listen: false).createShop(_createdShop);
+    Navigator.of(context).pop();
     //test
-    print(_editedShop.name);
-    print(_editedShop.location);
+    print(_createdShop.name);
+    print(_createdShop.location);
 
   }
 
@@ -47,9 +56,15 @@ class _CreateAShopScreenState extends State<CreateAShopScreen> {
                 textInputAction: TextInputAction.next,
                 onSaved: (val) {
                   if (val != null) {
-                    _editedShop = Shop(name: val, id: _editedShop.id, location: _editedShop.location, products: _editedShop.products);
+                    _createdShop = Shop(name: val, id: _createdShop.id, location: _createdShop.location, products: _createdShop.products);
                   }
-                }
+                },
+                validator: (val) {
+                  if (val!.isEmpty) {
+                    return 'Please provide a value';
+                  }
+                  return null;
+                },
               ),
               TextFormField(
                 decoration: InputDecoration(labelText: 'Address'),
@@ -57,9 +72,15 @@ class _CreateAShopScreenState extends State<CreateAShopScreen> {
                 onFieldSubmitted: (_) {
                   _submitShop();
                 },
+                validator: (val) {
+                  if (val!.isEmpty) {
+                    return 'Please provide a value';
+                  }
+                  return null;
+                },
                 onSaved: (val) {
                   if (val != null) {
-                    _editedShop = Shop(name: _editedShop.name, id: _editedShop.id, location: val, products: _editedShop.products);
+                    _createdShop = Shop(name: _createdShop.name, id: _createdShop.id, location: val, products: _createdShop.products);
                   }
                 },
               ),

@@ -20,7 +20,7 @@ class ShopsProv with ChangeNotifier{
   }
   
   void createShop(Shop shop) {
-    final url = Uri.https('https://bodega-22cd9-default-rtdb.firebaseio.com/', '/shops.json');
+    final url = Uri.parse('https://bodega-22cd9-default-rtdb.firebaseio.com/shops.json');
     http.post(url, body: jsonEncode({
       'shopID': shop.id,
       'shopName': shop.name,
