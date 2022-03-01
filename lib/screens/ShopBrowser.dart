@@ -1,13 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import '../widgets/near_by_shop_list.dart';
-
-
-
+import '../widgets/NearbyShopsList.dart';
 
 class ShopBrowser extends StatelessWidget {
-  const ShopBrowser({ Key? key }) : super(key: key);
+  const ShopBrowser({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -18,7 +15,8 @@ class ShopBrowser extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded(child: TextFormField(
+          Expanded(
+              child: TextFormField(
             //controller: _searchController,
             textCapitalization: TextCapitalization.words,
             decoration: InputDecoration(hintText: 'Select A Location'),

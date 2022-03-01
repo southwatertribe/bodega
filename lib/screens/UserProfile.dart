@@ -8,17 +8,17 @@
 //Navigator.of(context).pushNamed(ShopProfile.routename, arguments: shopName);
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import '../providers/shops_provider.dart';
-import 'create_a_shop.dart';
+import '../providers/ShopsProv.dart';
+import 'CreateAShopScreen.dart';
 
 //drawer
-import '../widgets/user_drawer.dart';
+import '../widgets/UserDrawer.dart';
 
 class UserProfile extends StatelessWidget {
-  const UserProfile({ Key? key }) : super(key: key);
+  const UserProfile({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-  final shopsData = Provider.of<ShopsProv>(context);
+    final shopsData = Provider.of<ShopsProv>(context);
     return Scaffold(
       appBar: AppBar(
         title: Text('User Shop/User Name'),
@@ -30,12 +30,14 @@ class UserProfile extends StatelessWidget {
             Container(
               child: Text('You Dont Have A Shop Yet'),
             ),
-             Container(
-              child: TextButton(onPressed: () {
-                Navigator.of(context).pushNamed(CreateAShopScreen.routename);
-              }, child: Text('Create Your Shop!'),
+            Container(
+              child: TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(CreateAShopScreen.routename);
+                },
+                child: Text('Create Your Shop!'),
               ),
-            ),          
+            ),
           ],
         ),
       ),

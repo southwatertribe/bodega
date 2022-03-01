@@ -2,23 +2,25 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tester/screens/create_a_shop.dart';
-import 'widgets/bottom_app_bar.dart';
-import 'screens/shop_profile.dart';
+import 'package:tester/screens/CreateAShopScreen.dart';
+import 'widgets/BottomNavBar.dart';
+import 'screens/ShopProfile.dart';
 //for testing purposes
-import 'screens/auth_screen.dart';
+import 'screens/AuthScreen.dart';
 
-import './providers/shops_provider.dart';
+import 'providers/ShopsProv.dart';
+
 void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
-  const MyApp({ Key? key }) : super(key: key);
+  const MyApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-      create: (ctx) => ShopsProv(),)
+          create: (ctx) => ShopsProv(),
+        )
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -26,7 +28,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           brightness: Brightness.dark,
           //backgroundColor: Colors.black87,
-        ), 
+        ),
         home: BottomNavBar(),
         routes: {
           ShopProfile.routename: (ctx) => ShopProfile(),

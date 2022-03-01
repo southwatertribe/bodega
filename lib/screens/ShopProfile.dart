@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:tester/providers/shops_provider.dart';
+import 'package:tester/providers/ShopsProv.dart';
 
 class ShopProfile extends StatelessWidget {
   //const ShopProfile({ Key? key }) : super(key: key);
